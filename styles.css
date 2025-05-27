@@ -353,8 +353,30 @@ body {
 }
 
 .modal-github-btn {
-    font-size: 1rem;
-    padding: 0.8rem 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #2d333b;
+    color: var(--white);
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.modal-github-btn:hover {
+    background: #444c56;
+    transform: translateY(-2px);
+}
+
+[data-theme="dark"] .modal-github-btn {
+    background: #484f58;
+}
+
+[data-theme="dark"] .modal-github-btn:hover {
+    background: #6e7681;
 }
 
 .contact-brief {
@@ -439,9 +461,10 @@ body {
 
 .tech-stack span {
     padding: 0.3rem 0.8rem;
-    background: var(--light-bg);
+    background: var(--white);
     border-radius: 20px;
     font-size: 0.9rem;
+    color: var(--text-color);
 }
 
 /* Skills Section */
@@ -476,6 +499,7 @@ body {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     color: var(--primary-color);
+    text-align: center;
 }
 
 .skill-category ul {
@@ -736,10 +760,18 @@ footer {
     color: var(--secondary-color);
 }
 
-.modal h2 {
-    color: var(--primary-color);
-    font-size: 2rem;
+.modal-header {
     margin-bottom: 1.5rem;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.title-container h2 {
+    margin: 0;
 }
 
 .modal-sections {
@@ -764,7 +796,7 @@ footer {
     font-size: 1.1rem;
     line-height: 1.6;
     color: var(--text-color);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 #modalFeatures {
@@ -899,4 +931,33 @@ footer {
     transition: background-color 0.3s;
     font-size: 1rem;
     font-weight: 500;
+}
+
+.modal-github-btn {
+    white-space: nowrap;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.95rem;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .tech-links-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .links-section {
+        padding: 1rem;
+        min-width: 100%;
+    }
+}
+
+.modal h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
 } 
