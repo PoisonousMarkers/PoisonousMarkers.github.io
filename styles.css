@@ -367,30 +367,14 @@ body {
 }
 
 .modal-github-btn {
-    display: inline-flex;
+    display: none;
+    white-space: nowrap;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.95rem;
+    width: 100%;
+    text-align: center;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: #2d333b;
-    color: var(--white);
-    border-radius: 5px;
-    font-size: 0.9rem;
-    text-decoration: none;
-    margin-bottom: 1.5rem;
-    transition: all 0.3s ease;
-}
-
-.modal-github-btn:hover {
-    background: #444c56;
-    transform: translateY(-2px);
-}
-
-[data-theme="dark"] .modal-github-btn {
-    background: #484f58;
-}
-
-[data-theme="dark"] .modal-github-btn:hover {
-    background: #6e7681;
+    justify-content: center;
 }
 
 .contact-brief {
@@ -947,17 +931,6 @@ footer {
 .social-links {
     display: flex;
     gap: 1rem;
-}
-
-.modal-github-btn {
-    white-space: nowrap;
-    padding: 0.8rem 1.2rem;
-    font-size: 0.95rem;
-    width: 100%;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 @media (max-width: 768px) {
