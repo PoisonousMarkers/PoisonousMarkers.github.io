@@ -94,32 +94,27 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Add fade-in animation to sections only on desktop
-const isMobile = window.innerWidth <= 768;
+// Add fade-in animation to sections
+const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
-document.querySelectorAll('section').forEach(section => {
-    if (!isMobile) {
+if (!isMobile) {
+    document.querySelectorAll('section').forEach(section => {
         section.style.opacity = '0';
         section.style.transform = 'translateY(20px)';
         section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
         observer.observe(section);
-    } else {
-        section.style.opacity = '1';
-        section.style.transform = 'none';
-    }
-});
+    });
 
-// Add fade-in class for animation
-document.head.insertAdjacentHTML('beforeend', `
-    <style>
-        @media (min-width: 769px) {
+    // Add fade-in class for animation
+    document.head.insertAdjacentHTML('beforeend', `
+        <style>
             .fade-in {
                 opacity: 1 !important;
                 transform: translateY(0) !important;
             }
-        }
-    </style>
-`);
+        </style>
+    `);
+}
 
 // Project card hover effect
 document.querySelectorAll('.project-card').forEach(card => {
