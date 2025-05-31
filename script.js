@@ -1,11 +1,10 @@
 // Dark mode functionality
-const darkModeToggle = document.getElementById('dark-mode-toggle');
+const themeToggleBtn = document.getElementById('theme-toggle-btn');
 const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
 // Function to toggle dark mode
 function toggleDarkMode(isDark) {
     document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
-    darkModeToggle.checked = isDark;
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
 }
 
@@ -17,9 +16,10 @@ if (savedTheme) {
     toggleDarkMode(prefersDarkScheme.matches);
 }
 
-// Listen for toggle button change
-darkModeToggle.addEventListener('change', (e) => {
-    toggleDarkMode(e.target.checked);
+// Listen for toggle button click
+themeToggleBtn.addEventListener('click', () => {
+    const currentTheme = document.body.getAttribute('data-theme');
+    toggleDarkMode(currentTheme !== 'dark');
 });
 
 // Listen for system theme changes
