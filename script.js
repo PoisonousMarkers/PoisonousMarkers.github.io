@@ -81,39 +81,40 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Intersection Observer for fade-in animations
-const observerOptions = {
-    threshold: 0.2
-};
+// Only initialize animations for desktop
+if (window.matchMedia('(min-width: 769px)').matches) {
+    const observerOptions = {
+        threshold: 0.2
+    };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-        }
-    });
-}, observerOptions);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+            }
+        });
+    }, observerOptions);
 
-// Add fade-in animation to sections
-const isMobile = window.matchMedia('(max-width: 768px)').matches;
-
-if (!isMobile) {
+    // Add initial styles and observers only on desktop
     document.querySelectorAll('section').forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        section.classList.add('will-animate');
         observer.observe(section);
     });
 
-    // Add fade-in class for animation
-    document.head.insertAdjacentHTML('beforeend', `
-        <style>
-            .fade-in {
-                opacity: 1 !important;
-                transform: translateY(0) !important;
-            }
-        </style>
-    `);
+    // Add animation styles
+    const styleSheet = document.createElement('style');
+    styleSheet.textContent = `
+        .will-animate {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    `;
+    document.head.appendChild(styleSheet);
 }
 
 // Project card hover effect

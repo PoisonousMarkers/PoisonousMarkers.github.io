@@ -954,4 +954,35 @@ footer {
 
 [data-theme="dark"] .tech-stack span {
     background: var(--white);
+}
+
+/* Base section styles */
+section {
+    opacity: 1;
+    transform: none;
+}
+
+/* Only apply animations on desktop */
+@media (min-width: 769px) {
+    section.will-animate {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    
+    section.fade-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    
+    .nav-content {
+        justify-content: space-between;
+    }
 } 
