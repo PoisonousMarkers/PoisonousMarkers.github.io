@@ -166,14 +166,14 @@ document.querySelectorAll('.skill-category').forEach(category => {
 const projectDetails = {
     ecg: {
         title: "ECG Analysis System-on-Chip",
-        description: "A sophisticated FPGA-based System-on-Programmable Chip designed for real-time ECG signal analysis and cardiac monitoring. This system combines hardware acceleration with advanced signal processing algorithms to provide accurate and efficient heart activity analysis.",
-        technicalDetails: "Implemented using Xilinx Vivado for FPGA development, featuring custom VHDL modules for signal processing and Python-based data analysis. The system utilizes parallel processing capabilities of FPGA for real-time performance.",
+        description: "A sophisticated FPGA-based System-on-Programmable Chip designed for ECG signal analysis and cardiac monitoring. This system combines hardware acceleration with advanced signal processing algorithms to analyze ECG datasets for cardiac activity patterns.",
+        technicalDetails: "Implemented using Xilinx Vivado for FPGA development, featuring custom VHDL modules for signal processing and Python-based data analysis. The system processes ECG datasets using parallel processing capabilities of FPGA for efficient analysis.",
         features: [
-            "Real-time ECG signal acquisition and filtering",
+            "ECG signal processing and filtering",
             "Hardware-accelerated R-peak detection algorithm",
             "Automated arrhythmia detection and classification",
-            "High-speed data processing with minimal latency",
-            "Configurable analysis parameters for different use cases"
+            "High-throughput data processing",
+            "Configurable analysis parameters for different datasets"
         ],
         technologies: ["Python", "C++", "VHDL", "Vivado", "Signal Processing", "FPGA Design", "Digital Filters"],
         githubUrl: "https://github.com/yourusername/ecg-analysis"
