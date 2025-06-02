@@ -985,4 +985,18 @@ section {
     .nav-content {
         justify-content: space-between;
     }
+}
+
+.view-more-hint {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+.view-more-hint i {
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
 } 
